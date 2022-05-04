@@ -11,8 +11,14 @@
 
     nav ul li {
         display: block;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin: 20px 0;
+    }
+
+    .nav-ul-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100vh - 120px);
     }
 
     .nav-ul-items li a{
@@ -24,8 +30,12 @@
     }
 
     #menuList {
+        height: 0;
         overflow: hidden;
         transition: 0.5s;
+    }
+    #menuList.show {
+        height: calc(100vh - 120px);
     }
 
     .col-1 {

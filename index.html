@@ -21,7 +21,7 @@
                     <li><a href="#">Others</a></li>
                 </ul>
             </nav>
-            <img src="./img/Playstation_Img/menu.png" class="menu-icon" onclick="togglemenu()">
+            <img id="menu-button" class="menu-icon" src="./img/Playstation_Img/menu.png">
         </div>
 
         <div class="row">
@@ -30,9 +30,10 @@
               <h2>Wireless Controller for Playstation 4</h2>
               <p>(Complatible/Generic)</p>
               <h4>$32.50</h4>
-              <button type="button">Buy Now
+              <button type="button">
+                  <span>Buy Now</span>
                   <img src="./img/Playstation_Img/arrow.png" alt="arrow>">
-                </button>
+              </button>
           </div>  
           <div class="col-2">
               <img src="./img/Playstation_Img/controller.png" class="controller" alt="controller_ps4">
@@ -51,17 +52,11 @@
         </div>
     </div>
     <script>
-        var menuList = document.getElementById("menuList");
-        menuList.style.maxHeight = "0px";
-
-        function togglemenu() {
-            if(menuList.style.maxHeight == "0px"){
-                menuList.style.maxHeight = "130px";
-            }
-            else {
-                menuList.style.maxHeight = "0px";
-            }
-        }
+        (() => {
+            document.getElementById('menu-button').addEventListener('click', () => {
+                document.getElementById('menuList').classList.toggle('show');
+            });
+        })();
     </script>
 </body>
 </html>

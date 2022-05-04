@@ -71,13 +71,13 @@ text-align: right;
 .nav-ul-items li a {
     text-decoration: none;
     color: #000;
-    font-size: 14px;
+    font-size: 24px;
     font-family: sans-serif
 
 }
 
 .nav-ul-items li a:hover {
-    color: #ff5ea2;
+    border-bottom: 4px solid #fff;
 }
 
 .row {
@@ -118,7 +118,9 @@ text-align: right;
 
 
 button {
+    position: relative;
     width: 140px;
+    height: 40px;
     border: 0;
     padding: 12px 10px;
     outline: none;
@@ -129,21 +131,36 @@ button {
     transition: width 0.5s;
 }
 
+button:hover {
+    width: 160px;
+}
+
+button > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .4s;
+}
+
+button:hover > span {
+    left: 35%;
+}
+
 button img {
     width: 30px;
-    display: none;
     margin-left: 10px;
+    opacity: 0;
+    transition: .4s;
 }
 
 button:hover img {
-    display: inline-block;
+    left: 65%;
+    opacity: 1;
 }
 
-button:hover {
-    width: 160px;
-    align-items: center;
-    justify-content: space-between;
-}
+
+
 
 .col-1::after {
     content: '';
@@ -178,9 +195,11 @@ button:hover {
     transform: translateX(210px);
 }
 
+.add-bnt {
+    text-align: center;
+}
+
 .add-bnt img {
-    position: relative;
-    left: 20px;
     width: 35px;
     margin-bottom: 5px;
 }
